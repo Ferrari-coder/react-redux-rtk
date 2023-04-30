@@ -28,12 +28,12 @@ const postsSlice = createSlice({
       reducer(state, action) {
         state.posts.push(action.payload);
       },
-      prepare(title, content, userId) {
+      prepare(title, body, userId) {
         return {
           payload: {
             id: nanoid(),
             title,
-            content,
+            body,
             date: new Date().toISOString(),
             userId,
             reactions: {
@@ -104,7 +104,7 @@ const postsSlice = createSlice({
           hooray: 0,
           heart: 0,
           rocket: 0,
-          eyes: 0,
+          coffee: 0,
         };
         console.log(action.payload);
         state.posts.push(action.payload);
